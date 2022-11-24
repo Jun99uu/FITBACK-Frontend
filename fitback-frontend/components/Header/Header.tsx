@@ -43,9 +43,19 @@ export default function Header() {
               />
             </div>
           </li>
-          <li onClick={() => changePage(CurrentMenu.Register)}>회원가입</li>
+          <li
+            onClick={() => changePage(CurrentMenu.Register)}
+            className={menuState === CurrentMenu.Register ? "selected" : ""}
+          >
+            회원가입
+          </li>
           <li className="divide-line">|</li>
-          <li onClick={() => changePage(CurrentMenu.Login)}>로그인</li>
+          <li
+            onClick={() => changePage(CurrentMenu.Login)}
+            className={menuState === CurrentMenu.Login ? "selected" : ""}
+          >
+            로그인
+          </li>
         </ul>
       </div>
       <style jsx>{`
@@ -56,6 +66,7 @@ export default function Header() {
           justify-content: center;
           border-bottom: 1px solid #dedede;
           color: #3b3b3b;
+          font-weight: 600;
         }
         .header-content {
           width: calc(100vw - 400px);
