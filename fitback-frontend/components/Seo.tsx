@@ -3,12 +3,16 @@ import Head from "next/head";
 interface headProps {
   title: string;
 }
+
 export default function Seo(props: headProps) {
   const { title } = props;
   return (
     <Head>
-      <title>{title} | Booklog - 북로그, 포트폴리오에 나의 서평을 담다.</title>
-      {/* <link rel="shortcut icon" href="/images/favicon/color.png" /> */}
+      <link rel="shortcut icon" href="/logo.png" />
+      <link rel="apple-touch-icon" href="/logo.png" />
+      <link rel="icon" type="image/png" href="/logo.png" />
+      <link rel="icon" type="image/png" href="/logo.png" />
+      <title>{title} | FITBACK, 나에게 딱 맞는 IT 피드백!</title>
       <meta
         httpEquiv="Content-Security-Policy"
         content="upgrade-insecure-requests"
