@@ -1,8 +1,9 @@
 import { Banner } from "../../interfaces/HomeInterface";
-import React, { ReactNode, useCallback, useEffect, useState } from "react";
-import useEmblaCarousel, { EmblaOptionsType } from "embla-carousel-react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import { DotButton, PrevButton, NextButton } from "./HomeBannerIcon";
 import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
 
 interface carouselProps {
   banner: Banner;
@@ -12,10 +13,15 @@ export default function HomeBanner(props: carouselProps) {
   const { banner } = props;
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const [viewportRef, embla] = useEmblaCarousel({
-    loop: true,
-    skipSnaps: false,
-  });
+  const autoplay = useRef(Autoplay({ delay: 4000, stopOnMouseEnter: true }));
+
+  const [viewportRef, embla] = useEmblaCarousel(
+    {
+      loop: true,
+      skipSnaps: false,
+    },
+    [autoplay.current]
+  );
 
   const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
   const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);

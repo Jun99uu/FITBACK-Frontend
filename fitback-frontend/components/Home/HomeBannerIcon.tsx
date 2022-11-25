@@ -46,6 +46,7 @@ export const PrevButton = (props: btnProps) => {
       <FontAwesomeIcon icon={faCaretLeft} />
       <style jsx>{`
         button {
+          width: 15px;
           color: white;
           background-color: transparent;
           touch-action: manipulation;
@@ -62,11 +63,11 @@ export const PrevButton = (props: btnProps) => {
         }
 
         button:hover {
-          font-size: 38px;
+          width: 16px;
         }
 
         button:active {
-          font-size: 34px;
+          width: 14px;
         }
       `}</style>
     </button>
@@ -80,6 +81,7 @@ export const NextButton = (props: btnProps) => {
       <FontAwesomeIcon icon={faCaretRight} />
       <style jsx>{`
         button {
+          width: 15px;
           color: white;
           background-color: transparent;
           touch-action: manipulation;
@@ -96,11 +98,11 @@ export const NextButton = (props: btnProps) => {
         }
 
         button:hover {
-          font-size: 38px;
+          width: 16px;
         }
 
         button:active {
-          font-size: 34px;
+          width: 14px;
         }
       `}</style>
     </button>
