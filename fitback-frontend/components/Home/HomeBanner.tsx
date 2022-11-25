@@ -119,7 +119,7 @@ export default function HomeBanner(props: carouselProps) {
           gap: 5px;
           position: absolute;
           top: 20px;
-          right: 40px;
+          right: 20px;
         }
       `}</style>
     </>
