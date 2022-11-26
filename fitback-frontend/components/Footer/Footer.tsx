@@ -31,14 +31,14 @@ export default function Footer() {
       </div>
       <style jsx>{`
         .container {
-          width: 100vw;
+          width: 100%;
           height: 200px;
           display: flex;
           justify-content: center;
           border-top: 1px solid #dedede;
         }
         .footer-box {
-          width: calc(100vw - 400px);
+          width: 80%;
           height: 100%;
           display: flex;
           justify-content: space-between;

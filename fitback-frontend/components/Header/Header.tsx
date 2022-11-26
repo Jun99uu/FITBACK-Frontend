@@ -60,7 +60,7 @@ export default function Header() {
       </div>
       <style jsx>{`
         .container {
-          width: 100vw;
+          width: 100%;
           height: 70px;
           display: flex;
           justify-content: center;
@@ -69,7 +69,7 @@ export default function Header() {
           font-weight: 600;
         }
         .header-content {
-          width: calc(100vw - 400px);
+          width: 80%;
           height: 100%;
           display: flex;
           flex-direction: row;
