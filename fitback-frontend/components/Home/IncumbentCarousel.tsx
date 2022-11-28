@@ -42,31 +42,54 @@ export default function IncumbentCarousel() {
   }, [embla, onSelect]);
 
   return (
-    <div className="embla">
-      <div className="embla__viewport" ref={viewportRef}>
-        <div className="embla__container">
-          {tmps.map((tmp, index) => (
-            <div key={`${tmp.name}-${index}`}>
-              <IncumbentItem info={tmp} />
-            </div>
-          ))}
-        </div>
+    <div className="container">
+      <div className="title-box">
+        <span>관심 분야에 맞는 현직자를 추천해드려요.</span>
       </div>
-      <button
-        onClick={scrollPrev}
-        disabled={!prevBtnEnabled}
-        className="prev-btn"
-      >
-        <FontAwesomeIcon icon={faAngleLeft} />
-      </button>
-      <button
-        onClick={scrollNext}
-        disabled={!nextBtnEnabled}
-        className="next-btn"
-      >
-        <FontAwesomeIcon icon={faAngleRight} />
-      </button>
+      <div className="embla">
+        <div className="embla__viewport" ref={viewportRef}>
+          <div className="embla__container">
+            {tmps.map((tmp, index) => (
+              <div key={`${tmp.name}-${index}`}>
+                <IncumbentItem info={tmp} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <button
+          onClick={scrollPrev}
+          disabled={!prevBtnEnabled}
+          className="prev-btn"
+        >
+          <FontAwesomeIcon icon={faAngleLeft} />
+        </button>
+        <button
+          onClick={scrollNext}
+          disabled={!nextBtnEnabled}
+          className="next-btn"
+        >
+          <FontAwesomeIcon icon={faAngleRight} />
+        </button>
+      </div>
+
       <style jsx>{`
+        .container {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .title-box {
+          width: 1300px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          font-size: 28px;
+          font-weight: 700;
+          color: #0a0a0a;
+          padding: 0px 0px 0px 20px;
+        }
         .embla {
           position: relative;
           width: 1300px;
