@@ -1,6 +1,7 @@
 import { Banner } from "../../interfaces/HomeInterface";
 import HomeBanner from "./HomeBanner";
 import HomeIntroBox from "./HomeIntroBox";
+import IncumbentCarousel from "./IncumbentCarousel";
 import SearchBox from "./SearchBox";
 
 interface homeProps {
@@ -15,6 +16,7 @@ export default function HomeLayout(props: homeProps) {
       <HomeIntroBox />
       <div className="content-box">
         <SearchBox />
+        <IncumbentCarousel />
       </div>
       <style jsx>{`
         .home-container {
@@ -28,7 +30,7 @@ export default function HomeLayout(props: homeProps) {
           flex-direction: column;
           align-items: center;
           justify-content: flex-start;
-          gap: 90px;
+          gap: 120px;
           padding: 90px 0px;
         }
       `}</style>
