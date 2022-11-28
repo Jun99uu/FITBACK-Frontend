@@ -10,10 +10,16 @@ interface serverSideProps {
 export default function Home(props: serverSideProps) {
   const { banner } = props;
   return (
-    <>
+    <div className="container">
       <Seo title="Home" />
       <HomeLayout banner={banner} />
-    </>
+      <style jsx>{`
+        .container {
+          width: 100%;
+          position: relative;
+        }
+      `}</style>
+    </div>
   );
 }
 
@@ -21,9 +27,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   try {
     const tmp: Banner = {
       banners: [
-        "https://i.pinimg.com/564x/6b/0e/34/6b0e34f23a883b9e127b07f0b84dd3fa.jpg",
-        "https://i.pinimg.com/564x/37/c8/3e/37c83e262bc611d2f2a8e705560c499d.jpg",
-        "https://i.pinimg.com/564x/68/f8/0a/68f80aa2a05b0dffa12062034d384468.jpg",
+        "https://user-images.githubusercontent.com/44965706/204178869-6211e40a-4bdd-444c-af42-17b94c75f36e.png",
+        "https://user-images.githubusercontent.com/44965706/204179090-ff4d93c4-2ad6-4aee-9043-b4b07ab9a776.png",
+        "https://user-images.githubusercontent.com/44965706/204179144-d17a581c-4865-4859-9187-9885df6e406c.png",
       ],
     };
 

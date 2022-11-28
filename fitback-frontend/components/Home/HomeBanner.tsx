@@ -13,7 +13,7 @@ export default function HomeBanner(props: carouselProps) {
   const { banner } = props;
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const autoplay = useRef(Autoplay({ delay: 4000, stopOnMouseEnter: true }));
+  const autoplay = useRef(Autoplay({ delay: 4000 }));
 
   const [viewportRef, embla] = useEmblaCarousel(
     {
@@ -42,41 +42,39 @@ export default function HomeBanner(props: carouselProps) {
   }, [embla, onSelect]);
 
   return (
-    <>
-      <div className="embla">
-        <div className="embla__viewport" ref={viewportRef}>
-          <div className="embla__container">
-            {banner.banners.map((b, index) => (
-              <div className="embla__slide" key={index}>
-                <div className="embla__slide__inner">
-                  <Image
-                    src={b}
-                    alt="home-banner"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </div>
+    <div className="embla">
+      <div className="embla__viewport" ref={viewportRef}>
+        <div className="embla__container">
+          {banner.banners.map((b, index) => (
+            <div className="embla__slide" key={index}>
+              <div className="embla__slide__inner">
+                <Image
+                  src={b}
+                  alt="home-banner"
+                  layout="fill"
+                  objectFit="cover"
+                />
               </div>
-            ))}
-          </div>
-        </div>
-        <PrevButton onClick={scrollPrev} />
-        <NextButton onClick={scrollNext} />
-        <div className="embla__dots">
-          {banner.banners.map((_, index) => (
-            <DotButton
-              key={index}
-              selected={index === selectedIndex}
-              onClick={() => scrollTo(index)}
-            />
+            </div>
           ))}
         </div>
+      </div>
+      <PrevButton onClick={scrollPrev} />
+      <NextButton onClick={scrollNext} />
+      <div className="embla__dots">
+        {banner.banners.map((_, index) => (
+          <DotButton
+            key={index}
+            selected={index === selectedIndex}
+            onClick={() => scrollTo(index)}
+          />
+        ))}
       </div>
       <style jsx>{`
         .embla {
           position: relative;
-          width: 100vw;
-          height: 300px;
+          width: 100%;
+          height: 100%;
         }
 
         .embla__viewport {
@@ -118,10 +116,11 @@ export default function HomeBanner(props: carouselProps) {
           flex-direction: row;
           gap: 5px;
           position: absolute;
-          top: 20px;
-          right: 20px;
+          bottom: 20px;
+          left: 50%;
+          transform: translate(-50%, 0);
         }
       `}</style>
-    </>
+    </div>
   );
 }

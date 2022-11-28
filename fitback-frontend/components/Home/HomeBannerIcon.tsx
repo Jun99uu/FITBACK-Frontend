@@ -25,14 +25,17 @@ export const DotButton = (props: dotProps) => {
           transition: all 0.25s;
           border: none;
           cursor: pointer;
+          border-radius: 100px;
         }
         .embla__dot {
           width: 15px;
-          background-color: #dedede;
+          background-color: #fafafa;
+          opacity: 0.6;
         }
         .is-selected {
           width: 30px;
-          background-color: #30b5ff;
+          background-color: #fafafa;
+          opacity: 0.9;
         }
       `}</style>
     </button>
