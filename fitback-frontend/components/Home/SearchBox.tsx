@@ -101,7 +101,7 @@ export default function SearchBox() {
           border: 3px solid #30b5ff;
           color: white;
           background-color: #30b5ff;
-          font-size: 20px;
+          font-size: 18px;
           font-weight: 700;
           transition: all 0.25s;
         }
@@ -153,8 +153,8 @@ export default function SearchBox() {
           align-items: center;
         }
         .mag-icon {
-          width: 30px;
-          height: 30px;
+          width: 25px;
+          height: 25px;
         }
       `}</style>
     </div>
