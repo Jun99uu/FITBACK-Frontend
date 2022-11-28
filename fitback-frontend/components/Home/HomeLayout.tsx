@@ -4,6 +4,7 @@ import HomeIntroBox from "./HomeIntroBox";
 import IncumbentCarousel from "./IncumbentCarousel";
 import ReviewCarousel from "./ReviewCarousel";
 import SearchBox from "./SearchBox";
+import ButtonBanner from "./ButtonBanner";
 
 interface homeProps {
   banner: Banner;
@@ -19,6 +20,7 @@ export default function HomeLayout(props: homeProps) {
         <SearchBox />
         <IncumbentCarousel />
         <ReviewCarousel />
+        <ButtonBanner />
       </div>
       <style jsx>{`
         .home-container {
