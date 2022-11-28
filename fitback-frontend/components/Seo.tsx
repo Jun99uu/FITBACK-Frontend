@@ -13,10 +13,6 @@ export default function Seo(props: headProps) {
       <link rel="icon" type="image/png" href="/logo.png" />
       <link rel="icon" type="image/png" href="/logo.png" />
       <title>{title} | FITBACK, 나에게 딱 맞는 IT 피드백!</title>
-      <meta
-        httpEquiv="Content-Security-Policy"
-        content="upgrade-insecure-requests"
-      />
     </Head>
   );
 }
