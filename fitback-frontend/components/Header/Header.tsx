@@ -20,10 +20,16 @@ export default function Header() {
             <Image src={logo} alt="logo" width={122.55} height={20.78} />
           </li>
           <li
+            className={menuState === CurrentMenu.Find ? "selected" : ""}
+            onClick={() => changePage(CurrentMenu.Find)}
+          >
+            현직자
+          </li>
+          <li
             className={menuState === CurrentMenu.Feedback ? "selected" : ""}
             onClick={() => changePage(CurrentMenu.Feedback)}
           >
-            피드백
+            마이 핏백
           </li>
           <li
             className={menuState === CurrentMenu.Event ? "selected" : ""}
