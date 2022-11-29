@@ -8,14 +8,14 @@ export default function HomeIntroBox() {
     <div className="container">
       <div className="content-box">
         <div className="title-box">
-          <span className="title">{`니즈에 FIT한 피드백,\n나만의 작업물을 현직자에게 리뷰 받아보세요.`}</span>
+          <span className="title">{`니즈에 FIT한 피드백,\n나만의 작업물을 현직자 멘토에게 리뷰 받아보세요.`}</span>
           <span className="subtitle">
             작업물 퀄리티 향상부터, 취업 및 이직 확률도 높아져요!
           </span>
         </div>
         <div className="btn-box">
           <button>
-            <span>현직자 둘러보기</span>
+            <span>멘토 둘러보기</span>
             <div>
               <FontAwesomeIcon icon={faAngleRight} className="angle-right" />
             </div>
@@ -42,6 +42,7 @@ export default function HomeIntroBox() {
             layout="fill"
             objectFit="cover"
             alt="test-icon"
+            quality={100}
           />
         </div>
       </div>

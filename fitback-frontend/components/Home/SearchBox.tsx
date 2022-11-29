@@ -49,7 +49,7 @@ export default function SearchBox() {
       )}
       <input
         type="text"
-        placeholder="나에게 맞는 현직자를 찾아보세요."
+        placeholder="나에게 맞는 멘토를 찾아보세요."
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
       />

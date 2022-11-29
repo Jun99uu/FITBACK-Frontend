@@ -53,6 +53,7 @@ export default function HomeBanner(props: carouselProps) {
                   alt="home-banner"
                   layout="fill"
                   objectFit="cover"
+                  quality={100}
                 />
               </div>
             </div>

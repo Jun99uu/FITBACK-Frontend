@@ -44,7 +44,7 @@ export default function IncumbentCarousel() {
   return (
     <div className="container">
       <div className="title-box">
-        <span>관심 분야에 맞는 현직자를 추천해드려요.</span>
+        <span>관심 분야에 맞는 멘토를 추천해드려요.</span>
       </div>
       <div className="embla">
         <div className="embla__viewport" ref={viewportRef}>

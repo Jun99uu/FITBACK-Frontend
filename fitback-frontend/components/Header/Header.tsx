@@ -23,7 +23,7 @@ export default function Header() {
             className={menuState === CurrentMenu.Find ? "selected" : ""}
             onClick={() => changePage(CurrentMenu.Find)}
           >
-            현직자
+            멘토
           </li>
           <li
             className={menuState === CurrentMenu.Feedback ? "selected" : ""}
