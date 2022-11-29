@@ -2,8 +2,8 @@ import { atom } from "recoil";
 
 export enum CurrentMenu {
   Home = "index",
-  Find = "find", //현직자
-  Feedback = "feedback",
+  Mentor = "mentor", //현직자
+  Feedback = "myfeedback",
   Event = "event",
   Login = "login",
   Register = "register",
