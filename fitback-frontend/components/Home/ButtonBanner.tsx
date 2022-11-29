@@ -10,19 +10,27 @@ export default function ButtonBanner() {
       <span className="title">인기 직무만 모아!</span>
       <div className="btn-box">
         <button className="be">
-          <Image src={BE} width={80} height={80} alt="BE" className="img" />
+          <span className="img">
+            <Image src={BE} layout="fill" objectFit="cover" alt="BE" />
+          </span>
           <span>개발 | 백엔드</span>
         </button>
         <button className="fe">
-          <Image src={FE} width={80} height={80} alt="FE" className="img" />
+          <span className="img">
+            <Image src={FE} layout="fill" objectFit="cover" alt="FE" />
+          </span>
           <span>개발 | 프론트엔드</span>
         </button>
         <button className="ds">
-          <Image src={DS} width={80} height={80} alt="DS" className="img" />
+          <span className="img">
+            <Image src={DS} layout="fill" objectFit="cover" alt="DS" />
+          </span>
           <span>UI/UX 디자인</span>
         </button>
         <button className="pm">
-          <Image src={PM} width={80} height={80} alt="PM" className="img" />
+          <span className="img">
+            <Image src={PM} layout="fill" objectFit="cover" alt="PM" />
+          </span>
           <span>서비스 기획</span>
         </button>
       </div>
@@ -55,6 +63,7 @@ export default function ButtonBanner() {
           height: 100%;
           width: 300px;
           border-radius: 30px;
+          padding: 0px 40px 0px 0px;
           display: flex;
           flex-direction: row;
           justify-content: space-evenly;
@@ -69,11 +78,16 @@ export default function ButtonBanner() {
           transition: all 0.25s;
         }
         .img {
+          width: 80px;
+          height: 80px;
+          position: relative;
           transition: all 0.25s;
         }
-        button:hover button .img {
-          width: 90px;
-          height: 90px;
+        button:hover .img {
+          transform: scale(1.1);
+        }
+        button:active .img {
+          transform: scale(0.98);
         }
         .be {
           background-color: #e9efb6;
