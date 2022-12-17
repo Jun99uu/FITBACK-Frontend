@@ -4,7 +4,7 @@ import { useState } from "react";
 import Router from "next/router";
 
 export default function LoginLayout() {
-  const logoStyle = { width: "10%", height: "auto" };
+  const logoStyle = { width: "240px", height: "auto" };
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const router = Router;
@@ -86,6 +86,9 @@ export default function LoginLayout() {
         }
         .non-valued {
           border: 2px solid #dedede;
+        }
+        .non-valued:focus {
+          border: 2px solid #232323;
         }
         .valued {
           border: 2px solid #232323;
