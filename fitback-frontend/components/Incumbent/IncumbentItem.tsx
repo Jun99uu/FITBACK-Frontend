@@ -26,6 +26,7 @@ export default function IncumbentItem(props: itemProps) {
   return (
     <div className="container">
       <div className="color-box">
+        <div className="dark-box" />
         <span className="ment">{info.ment}</span>
       </div>
       <div className="bottom-box">
@@ -102,6 +103,11 @@ export default function IncumbentItem(props: itemProps) {
             background-position: 0% 50%;
           }
         }
+        .dark-box {
+          width: 100%;
+          height: 100%;
+          background-color: #00000058;
+        }
         .container {
           width: 290px;
           height: 320px;
@@ -123,6 +129,7 @@ export default function IncumbentItem(props: itemProps) {
           align-items: center;
           background: ${`linear-gradient(135deg, ${start}, ${end})`};
           transition: all 0.15s;
+          position: relative;
         }
         .container:hover .color-box {
           background-size: 150% 150%;
@@ -133,13 +140,20 @@ export default function IncumbentItem(props: itemProps) {
           animation: AnimationName 4s ease infinite;
         }
         .ment {
+          width: 70%;
+          word-break: keep-all;
           text-align: center;
           white-space: pre-line;
           word-break: keep-all;
-          font-size: 21px;
+          font-size: 20px;
           color: white;
-          font-weight: 700;
-          text-shadow: 1px 1px 2px #232323;
+          font-weight: 600;
+          position: absolute;
+          top: 45%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          line-height: 28px;
+          z-index: 10;
         }
         .bottom-box {
           width: 100%;
@@ -215,6 +229,7 @@ export default function IncumbentItem(props: itemProps) {
           gap: 15px;
           color: #656565;
           font-weight: 500;
+          font-size: 14px;
         }
       `}</style>
     </div>

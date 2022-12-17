@@ -88,7 +88,7 @@ export default function HomeIntroBox() {
           flex-direction: row;
           justify-content: flex-start;
           align-items: center;
-          gap: 10px;
+          gap: 20px;
         }
         .btn-box button {
           color: #707070;
@@ -100,14 +100,14 @@ export default function HomeIntroBox() {
           flex-direction: row;
           justify-content: space-evenly;
           align-items: center;
-          box-shadow: #c2c2c2 0px 2px 8px 0px;
+          box-shadow: #c2c2c2a2 0px 1px 4px 0px;
           background-color: white;
           cursor: pointer;
         }
         .btn-box button span {
           font-family: "SUIT Variable", sans-serif;
           font-weight: 600;
-          font-size: 18px;
+          font-size: 16px;
         }
         .btn-box button div {
           width: 12px;

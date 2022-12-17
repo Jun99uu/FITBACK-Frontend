@@ -27,6 +27,7 @@ export default function ReviewCarousel() {
   const [viewportRef, embla] = useEmblaCarousel({
     align: "start",
     skipSnaps: false,
+    loop: true,
   });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);

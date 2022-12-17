@@ -24,23 +24,23 @@ export default function Header() {
               <Image src={logo} alt="logo" width={122.55} height={20.78} />
             </Link>
           </li>
-          <li
-            className={menuState === CurrentMenu.Mentor ? "selected" : ""}
-            onClick={() => changePage(CurrentMenu.Mentor)}
-          >
-            <Link href="/mentor">멘토</Link>
+          <li className={menuState === CurrentMenu.Mentor ? "selected" : ""}>
+            <Link href="/mentor" onClick={() => changePage(CurrentMenu.Mentor)}>
+              멘토
+            </Link>
           </li>
-          <li
-            className={menuState === CurrentMenu.Feedback ? "selected" : ""}
-            onClick={() => changePage(CurrentMenu.Feedback)}
-          >
-            <Link href="/myfeedback">마이 핏백</Link>
+          <li className={menuState === CurrentMenu.Feedback ? "selected" : ""}>
+            <Link
+              href="/myfeedback"
+              onClick={() => changePage(CurrentMenu.Feedback)}
+            >
+              마이 핏백
+            </Link>
           </li>
-          <li
-            className={menuState === CurrentMenu.Event ? "selected" : ""}
-            onClick={() => changePage(CurrentMenu.Event)}
-          >
-            <Link href="/event">이벤트</Link>
+          <li className={menuState === CurrentMenu.Event ? "selected" : ""}>
+            <Link href="/event" onClick={() => changePage(CurrentMenu.Event)}>
+              이벤트
+            </Link>
           </li>
         </ul>
         <ul className="right-box">
@@ -54,18 +54,19 @@ export default function Header() {
               />
             </div>
           </li>
-          <li
-            onClick={() => changePage(CurrentMenu.Register)}
-            className={menuState === CurrentMenu.Register ? "selected" : ""}
-          >
-            <Link href="/signup">회원가입</Link>
+          <li className={menuState === CurrentMenu.Register ? "selected" : ""}>
+            <Link
+              href="/signup"
+              onClick={() => changePage(CurrentMenu.Register)}
+            >
+              회원가입
+            </Link>
           </li>
           <li className="divide-line">|</li>
-          <li
-            onClick={() => changePage(CurrentMenu.Login)}
-            className={menuState === CurrentMenu.Login ? "selected" : ""}
-          >
-            <Link href="/login">로그인</Link>
+          <li className={menuState === CurrentMenu.Login ? "selected" : ""}>
+            <Link href="/login" onClick={() => changePage(CurrentMenu.Login)}>
+              로그인
+            </Link>
           </li>
         </ul>
       </div>
@@ -121,8 +122,7 @@ export default function Header() {
           display: flex;
           align-items: center;
           text-align: center;
-          height: 100%;
-          cursor: pointer;
+          height: 105%;
           transition: 0.25s all;
         }
         .divide-line,

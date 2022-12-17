@@ -44,7 +44,7 @@ export default function ReviewItem(props: reviewProps) {
         <span className="content">
           {info.content.length > 190 ? (
             <>
-              {`${info.content.substring(0, 189)}...`}
+              {`${info.content.substring(0, 140)}...`}
               <span className="more">더보기</span>
             </>
           ) : (
@@ -140,10 +140,10 @@ export default function ReviewItem(props: reviewProps) {
         .bold {
           font-weight: 700;
         }
-        .cotentn {
+        .content {
           color: #757575;
-          word-break: keep-all;
           white-space: pre-line;
+          line-height: 20px;
         }
         .more {
           color: #bcbcbc;

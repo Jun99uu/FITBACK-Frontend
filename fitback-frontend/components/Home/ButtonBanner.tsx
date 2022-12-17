@@ -62,7 +62,7 @@ export default function ButtonBanner() {
         button {
           height: 100%;
           width: 300px;
-          border-radius: 30px;
+          border-radius: 15px;
           padding: 0px 40px 0px 0px;
           display: flex;
           flex-direction: row;
