@@ -5,6 +5,7 @@ import { Incumbent } from "../../../interfaces/IncumbentInterface";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import Router from "next/router";
 
 interface itemProps {
   info: Incumbent;
@@ -14,6 +15,7 @@ export default function Card(props: itemProps) {
   const { info } = props;
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
+  const router = Router;
 
   const shuffle = () => {
     const randomArray = colors.sort(() => 0.5 - Math.random());
@@ -63,7 +65,12 @@ export default function Card(props: itemProps) {
         <button className="like-btn">
           <FontAwesomeIcon icon={faHeart} />
         </button>
-        <button className="ask-btn">내 작업물 피드백 받기</button>
+        <button
+          className="ask-btn"
+          onClick={() => router.push(`/registerfeedback/${info.name}`)}
+        >
+          내 작업물 피드백 받기
+        </button>
       </div>
       <style jsx>{`
         @-webkit-keyframes AnimationName {

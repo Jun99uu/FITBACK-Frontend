@@ -26,7 +26,10 @@ export default function IncumbentItem(props: itemProps) {
   }, []);
 
   return (
-    <div className="container" onClick={() => router.push(`/${info.id}`)}>
+    <div
+      className="container"
+      onClick={() => router.push(`/mentor/${info.id}`)}
+    >
       <div className="color-box">
         <div className="dark-box" />
         <span className="ment">{info.ment}</span>
