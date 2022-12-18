@@ -136,6 +136,7 @@ export default function DetailContentBox() {
           display: flex;
           align-items: center;
           justify-content: center;
+          gap: 5px;
           color: #3b3b3b;
           font-size: 16px;
           font-weight: 700;

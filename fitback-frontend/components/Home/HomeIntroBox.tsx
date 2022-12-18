@@ -2,8 +2,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import testPaper from "../../res/testpaper.svg";
+import Router from "next/router";
 
 export default function HomeIntroBox() {
+  const router = Router;
+
   return (
     <div className="container">
       <div className="content-box">
@@ -14,19 +17,19 @@ export default function HomeIntroBox() {
           </span>
         </div>
         <div className="btn-box">
-          <button>
+          <button onClick={() => router.push("/mentor")}>
             <span>멘토 둘러보기</span>
             <div>
               <FontAwesomeIcon icon={faAngleRight} className="angle-right" />
             </div>
           </button>
-          <button>
+          <button onClick={() => router.push("/mentor")}>
             <span>포트폴리오 리뷰 받기</span>
             <div>
               <FontAwesomeIcon icon={faAngleRight} className="angle-right" />
             </div>
           </button>
-          <button>
+          <button onClick={() => router.push("/mentor")}>
             <span>코드 리뷰 받기</span>
             <div>
               <FontAwesomeIcon icon={faAngleRight} className="angle-right" />

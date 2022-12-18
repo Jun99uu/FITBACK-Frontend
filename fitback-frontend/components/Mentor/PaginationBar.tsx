@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,7 +10,11 @@ interface paginationProps {
 
 export default function PaginationBar(props: paginationProps) {
   const { pages, curPage, setCurPage } = props;
-  const allPages = [...Array(pages)].map((v, i) => i);
+  const [allPages, setAllPages] = useState([...Array(pages)].map((v, i) => i));
+
+  useEffect(() => {
+    setAllPages([...Array(pages)].map((v, i) => i));
+  }, [pages]);
 
   return (
     <ul>
