@@ -1,9 +1,12 @@
 import ChoiceType from "./ChoiceType";
 import BeginnerFirst from "./BeginnerFirst";
+import BeginnerSecond from "./BeginnerSecond";
+import IncumbentFirst from "./IncumbentFirst";
+import IncumbentSecond from "./IncumbentSecond";
+import IncumbentThird from "./IncumbentThird";
+import Complete from "./Complete";
 import { useState } from "react";
 import { Stage } from "../../states/recoilBeginnerSignupState";
-import BeginnerSecond from "./BeginnerSecond";
-import Complete from "./Complete";
 
 export default function SignupLayout() {
   const [stage, setStage] = useState(Stage.ChoiceType);
@@ -16,11 +19,11 @@ export default function SignupLayout() {
       ) : stage === Stage.BeginnerSecond ? (
         <BeginnerSecond setStage={setStage} />
       ) : stage === Stage.IncumbentFirst ? (
-        <></>
+        <IncumbentFirst setStage={setStage} />
       ) : stage === Stage.IncumbentSecond ? (
-        <></>
+        <IncumbentSecond setStage={setStage} />
       ) : stage === Stage.IncumbentThird ? (
-        <></>
+        <IncumbentThird setStage={setStage} />
       ) : stage === Stage.Complete ? (
         <Complete setStage={setStage} />
       ) : (
