@@ -1,9 +1,9 @@
 import { atom } from "recoil";
 
-const defaultKeword = "";
+const defaultKeword: Array<string> = [];
 
-export const SearchState = atom<string>({
-  key: "layout",
+export const SearchState = atom<Array<string>>({
+  key: "keyword",
   default: defaultKeword,
 });
 
@@ -14,6 +14,6 @@ export enum Category {
 }
 
 export const CategoryState = atom<Category>({
-  key: "layout",
+  key: "category",
   default: Category.Job,
 });

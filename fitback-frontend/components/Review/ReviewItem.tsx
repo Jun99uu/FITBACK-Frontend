@@ -143,7 +143,7 @@ export default function ReviewItem(props: reviewProps) {
         .content {
           color: #757575;
           white-space: pre-line;
-          line-height: 20px;
+          line-height: 24px;
         }
         .more {
           color: #bcbcbc;
