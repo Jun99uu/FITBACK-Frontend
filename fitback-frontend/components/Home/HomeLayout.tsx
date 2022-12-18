@@ -18,7 +18,7 @@ export default function HomeLayout(props: homeProps) {
       <HomeIntroBox />
       <div className="content-box">
         <SearchBox />
-        <IncumbentCarousel />
+        <IncumbentCarousel header="관심 분야에 맞는 멘토를 추천해드려요." />
         <ReviewCarousel />
         <ButtonBanner />
       </div>

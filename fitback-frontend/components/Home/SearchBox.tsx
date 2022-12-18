@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
   faAngleDown,
+  faX,
 } from "@fortawesome/free-solid-svg-icons";
 import { useRecoilState } from "recoil";
 import {
@@ -10,7 +11,6 @@ import {
   CategoryState,
 } from "../../states/recoilSearchState";
 import { useState } from "react";
-import Image from "next/image";
 
 export default function SearchBox() {
   const categories = Object.values(Category);
@@ -25,40 +25,78 @@ export default function SearchBox() {
     setCollapse(false);
   };
 
+  const setKeywordHandler = () => {
+    setKeywordState((prev) => [...prev, keyword]);
+    setKeyword("");
+  };
+
+  const removeItem = (index: number) => {
+    setKeywordState((prev) => prev.filter((p, ind) => ind !== index));
+  };
+
   return (
-    <div className="container">
-      <div className="select-box">
-        <span>{category}</span>
-        <div
-          className="angle-down"
-          onClick={() => setCollapse((prev) => !prev)}
-        >
-          <FontAwesomeIcon icon={faAngleDown} />
+    <div className="container-wrapper">
+      <form
+        className="container"
+        onSubmit={(e) => {
+          e.preventDefault();
+          setKeywordHandler();
+        }}
+      >
+        <div className="select-box">
+          <span>{category}</span>
+          <div
+            className="angle-down"
+            onClick={() => setCollapse((prev) => !prev)}
+          >
+            <FontAwesomeIcon icon={faAngleDown} />
+          </div>
         </div>
-      </div>
-      {collapse ? (
-        <ul>
-          {categories.map((c) => (
-            <li key={c} onClick={() => setCategoryHandler(c)} className="opt">
-              {c}
+        {collapse ? (
+          <ul>
+            {categories.map((c) => (
+              <li key={c} onClick={() => setCategoryHandler(c)} className="opt">
+                {c}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <></>
+        )}
+        <input
+          type="text"
+          placeholder="나에게 맞는 멘토를 찾아보세요."
+          value={keyword}
+          onChange={(e) => setKeyword(e.target.value)}
+        />
+        <button className="search-btn">
+          <div className="mag-icon">
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </div>
+        </button>
+      </form>
+      {keywordState && keywordState.length > 0 ? (
+        <ul className="item-list">
+          {keywordState.map((keyword, index) => (
+            <li className="item">
+              <span>{keyword}</span>
+              <span className="x-mark" onClick={() => removeItem(index)}>
+                <FontAwesomeIcon icon={faX} />
+              </span>
             </li>
           ))}
         </ul>
       ) : (
         <></>
       )}
-      <input
-        type="text"
-        placeholder="나에게 맞는 멘토를 찾아보세요."
-        value={keyword}
-        onChange={(e) => setKeyword(e.target.value)}
-      />
-      <button className="search-btn">
-        <div className="mag-icon">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </div>
-      </button>
       <style jsx>{`
+        .container-wrapper {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
         .container {
           width: 60%;
           height: 60px;
@@ -89,7 +127,7 @@ export default function SearchBox() {
           justify-content: space-evenly;
           z-index: 1000;
         }
-        ul {
+        ul:not(.item-list) {
           position: absolute;
           top: 0px;
           left: 0px;
@@ -155,6 +193,32 @@ export default function SearchBox() {
         .mag-icon {
           width: 25px;
           height: 25px;
+        }
+        .item-list {
+          width: 60%;
+          min-width: 450px;
+          list-style-type: none;
+          margin: 0px;
+          padding: 0px;
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+        .item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 10px;
+          font-size: 16px;
+          color: white;
+          background-color: #30b5ff;
+          padding: 10px 15px;
+          border-radius: 500px;
+        }
+        .x-mark {
+          cursor: pointer;
+          font-size: 14px;
         }
       `}</style>
     </div>

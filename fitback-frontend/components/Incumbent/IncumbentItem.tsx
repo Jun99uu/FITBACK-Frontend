@@ -119,6 +119,7 @@ export default function IncumbentItem(props: itemProps) {
           align-items: center;
           justify-content: center;
           background-color: white;
+          position: relative;
           cursor: pointer;
         }
         .color-box {

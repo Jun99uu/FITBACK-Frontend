@@ -5,7 +5,12 @@ import useEmblaCarousel from "embla-carousel-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-export default function IncumbentCarousel() {
+interface incumbentProps {
+  header: string;
+}
+
+export default function IncumbentCarousel(props: incumbentProps) {
+  const { header } = props;
   const tmp: Incumbent = {
     name: "중규리",
     img: "https://i.pinimg.com/736x/49/fd/16/49fd16c2857d9ce982f4839958b1808a.jpg",
@@ -44,7 +49,7 @@ export default function IncumbentCarousel() {
   return (
     <div className="container">
       <div className="title-box">
-        <span>관심 분야에 맞는 멘토를 추천해드려요.</span>
+        <span>{header}</span>
       </div>
       <div className="embla">
         <div className="embla__viewport" ref={viewportRef}>
@@ -85,7 +90,7 @@ export default function IncumbentCarousel() {
           justify-content: flex-start;
           align-items: center;
 
-          font-size: 28px;
+          font-size: 24px;
           font-weight: 700;
           color: #0a0a0a;
           padding: 0px 0px 0px 20px;

@@ -75,7 +75,7 @@ export default function HomeIntroBox() {
           color: #0a0a0a;
         }
         .title {
-          font-size: 28px;
+          font-size: 24px;
           font-weight: 700;
           white-space: pre-line;
         }

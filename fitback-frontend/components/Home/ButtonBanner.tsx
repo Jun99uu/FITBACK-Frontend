@@ -46,7 +46,7 @@ export default function ButtonBanner() {
         .title {
           width: 1300px;
           text-align: start;
-          font-size: 28px;
+          font-size: 24px;
           font-weight: 700;
           color: #0a0a0a;
           padding: 0px 0px 0px 20px;

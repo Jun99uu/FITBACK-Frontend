@@ -127,7 +127,7 @@ export default function ReviewCarousel() {
           padding: 0px 0px 0px 20px;
         }
         .title {
-          font-size: 28px;
+          font-size: 24px;
           font-weight: 700;
           color: #0a0a0a;
         }
