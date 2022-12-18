@@ -1,19 +1,19 @@
-import { colors } from "../../res/colors";
-import auth from "../../res/icons/auth-incum.svg";
+import { colors } from "../../../res/colors";
+import auth from "../../../res/icons/auth-incum.svg";
 import Image from "next/image";
-import { Incumbent } from "../../interfaces/IncumbentInterface";
+import { Incumbent } from "../../../interfaces/IncumbentInterface";
 import { useState, useEffect } from "react";
-import Router from "next/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 interface itemProps {
   info: Incumbent;
 }
 
-export default function IncumbentItem(props: itemProps) {
+export default function Card(props: itemProps) {
   const { info } = props;
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
-  const router = Router;
 
   const shuffle = () => {
     const randomArray = colors.sort(() => 0.5 - Math.random());
@@ -26,10 +26,9 @@ export default function IncumbentItem(props: itemProps) {
   }, []);
 
   return (
-    <div className="container" onClick={() => router.push(`/${info.id}`)}>
+    <div className="container">
       <div className="color-box">
         <div className="dark-box" />
-        <span className="ment">{info.ment}</span>
       </div>
       <div className="bottom-box">
         <div className="img-container">
@@ -59,6 +58,12 @@ export default function IncumbentItem(props: itemProps) {
             <li>#만족도 {info.satisfaction}%</li>
           </ul>
         </div>
+      </div>
+      <div className="btn-box">
+        <button className="like-btn">
+          <FontAwesomeIcon icon={faHeart} />
+        </button>
+        <button className="ask-btn">내 작업물 피드백 받기</button>
       </div>
       <style jsx>{`
         @-webkit-keyframes AnimationName {
@@ -111,22 +116,21 @@ export default function IncumbentItem(props: itemProps) {
           background-color: #00000058;
         }
         .container {
-          width: 290px;
-          height: 320px;
+          width: 360px;
+          height: 340px;
           border-radius: 20px;
           overflow: hidden;
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
+          justify-content: flex-start;
           background-color: white;
           position: relative;
-          cursor: pointer;
         }
         .color-box {
           width: 100%;
-          height: 53%;
+          height: 26%;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -160,7 +164,7 @@ export default function IncumbentItem(props: itemProps) {
         }
         .bottom-box {
           width: 100%;
-          height: 47%;
+          height: 55%;
           position: relative;
           background-color: white;
           display: flex;
@@ -233,6 +237,34 @@ export default function IncumbentItem(props: itemProps) {
           color: #656565;
           font-weight: 500;
           font-size: 14px;
+        }
+        .btn-box {
+          width: 90%;
+          height: 25%;
+          align-self: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          border-top: 1px solid #dedede;
+        }
+        .btn-box button {
+          border-radius: 10px;
+          height: 60%;
+          padding: 0px 15px;
+          font-size: 14px;
+          font-weight: 700;
+          cursor: pointer;
+        }
+        .like-btn {
+          border: 2px solid #30b5ff;
+          background: none;
+          color: #30b5ff;
+        }
+        .ask-btn {
+          background-color: #30b5ff;
+          border: none;
+          color: white;
         }
       `}</style>
     </div>

@@ -12,6 +12,7 @@ interface incumbentProps {
 export default function IncumbentCarousel(props: incumbentProps) {
   const { header } = props;
   const tmp: Incumbent = {
+    id: 0,
     name: "중규리",
     img: "https://i.pinimg.com/736x/49/fd/16/49fd16c2857d9ce982f4839958b1808a.jpg",
     ment: "토스 가고 싶어?\n나도 가고 싶어...",

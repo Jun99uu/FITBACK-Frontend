@@ -8,3 +8,10 @@ export interface Review {
   content: string;
   createdAt: string;
 }
+
+export interface incumbentReview {
+  name: string;
+  score: number;
+  createdAt: string;
+  content: string;
+}
