@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Router from "next/router";
 
 enum Stage {
   New = "피드백 요청",
@@ -24,14 +25,16 @@ export default function BeginnerItemForMentor(props: itemProps) {
   //초심자 아이템임
   const { name, img, stage, createdAt, type, content, link } = props.item;
   const profileStyle = { width: "100%", height: "100%" };
+  const router = Router;
+
   return (
-    <div className="container">
+    <div className="container" onClick={() => router.push(`/myfeedback/0`)}>
       <div className="left-box">
         <ul className="upper-bar">
           <li>
-            <span className="profile-img">
-              <Image src={img} alt="profile" fill style={profileStyle} />
-            </span>
+            <div className="img-box">
+              <Image src={img} alt="profile" layout="fill" objectFit="cover" />
+            </div>
           </li>
           <li className="name">{name}님의 피드백 요청</li>
         </ul>
@@ -76,6 +79,7 @@ export default function BeginnerItemForMentor(props: itemProps) {
           justify-content: center;
           border-radius: 20px;
           box-shadow: #c2c2c2a2 0px 1px 4px 0px;
+          cursor: pointer;
         }
         .left-box {
           width: 80%;
@@ -112,14 +116,19 @@ export default function BeginnerItemForMentor(props: itemProps) {
           gap: 10px;
           align-items: center;
         }
-        .profile-img {
-          width: 30px;
-          height: 30px;
+
+        .img-box {
+          width: 50px;
+          height: 50px;
           border-radius: 100%;
-          position: relative;
           overflow: hidden;
+          position: relative;
         }
-        .name,
+        .name {
+          font-size: 18px;
+          color: #0a0a0a;
+          font-weight: 700;
+        }
         .type {
           font-size: 16px;
           color: #0a0a0a;

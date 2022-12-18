@@ -84,7 +84,7 @@ export default function ReviewItem(props: reviewProps) {
         }
         .img-box {
           width: 50px;
-          height: 100%;
+          height: 50px;
           border-radius: 100%;
           overflow: hidden;
           position: relative;

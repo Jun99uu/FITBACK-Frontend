@@ -50,7 +50,7 @@ export default function MyFitBackLayout(props: fitbackProps) {
       <style jsx>{`
         .container {
           width: 100%;
-          padding: 60px 120px;
+          padding: 80px 120px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;

@@ -8,7 +8,7 @@ enum UserType {
 }
 
 export default function MyFeedBack() {
-  const [userType, setUserType] = useState(UserType.Mentor);
+  const [userType, setUserType] = useState(UserType.Beginner);
   return (
     <div className="container">
       <Seo title="마이핏백" />
