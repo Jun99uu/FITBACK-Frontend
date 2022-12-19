@@ -57,7 +57,7 @@ export default function IncumbentItem(props: itemProps) {
             <li>|</li>
             <li>{info.career}년차</li>
           </ul>
-          <ul className="advertise-box">
+          <ul className="intros-box">
             <li>#후기 {info.reviews}건</li>
             <li>#만족도 {info.satisfaction}%</li>
           </ul>
@@ -228,7 +228,7 @@ export default function IncumbentItem(props: itemProps) {
           font-weight: 800;
           color: #30b5ff;
         }
-        .advertise-box {
+        .intros-box {
           display: flex;
           flex-direction: row;
           align-items: center;
