@@ -3,31 +3,33 @@ import BE from "../../res/icons/BE.svg";
 import FE from "../../res/icons/FE.svg";
 import DS from "../../res/icons/DS.svg";
 import PM from "../../res/icons/PM.svg";
+import Router from "next/router"
 
 export default function ButtonBanner() {
+  const router = Router
   return (
     <div className="container">
       <span className="title">인기 직무만 모아!</span>
       <div className="btn-box">
-        <button className="be">
+        <button className="be" onClick={() => router.push("/mentor")}>
           <span className="img">
             <Image src={BE} layout="fill" objectFit="cover" alt="BE" />
           </span>
           <span>개발 | 백엔드</span>
         </button>
-        <button className="fe">
+        <button className="fe" onClick={() => router.push("/mentor")}>
           <span className="img">
             <Image src={FE} layout="fill" objectFit="cover" alt="FE" />
           </span>
           <span>개발 | 프론트엔드</span>
         </button>
-        <button className="ds">
+        <button className="ds" onClick={() => router.push("/mentor")}>
           <span className="img">
             <Image src={DS} layout="fill" objectFit="cover" alt="DS" />
           </span>
           <span>UI/UX 디자인</span>
         </button>
-        <button className="pm">
+        <button className="pm" onClick={() => router.push("/mentor")}>
           <span className="img">
             <Image src={PM} layout="fill" objectFit="cover" alt="PM" />
           </span>

@@ -3,6 +3,8 @@ import Seo from "../../components/Seo";
 import FeedBackContentLayout from "../../components/Feedback/Dynamic/FeedBackContentLayout";
 import { useState } from "react";
 import CompleteLayout from "../../components/Feedback/Dynamic/CompleteLayout";
+import { AuthState, UserType } from "../../states/recoilAuthState";
+import { useRecoilState } from "recoil";
 
 enum Stage {
   New = "피드백 요청",
@@ -30,14 +32,9 @@ interface serversideProps {
   id: string;
 }
 
-enum UserType {
-  Beginner,
-  Mentor,
-}
-
 export default function MyFeedBackContent(props: serversideProps) {
   const { id } = props;
-  const [userType, setUserType] = useState(UserType.Beginner);
+  const [userType, setUserType] = useRecoilState(AuthState);
   return (
     <div className="container">
       <Seo title="마이핏백" />

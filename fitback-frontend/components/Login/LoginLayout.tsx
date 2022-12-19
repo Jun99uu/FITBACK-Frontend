@@ -2,12 +2,27 @@ import Image from "next/image";
 import LogoFull from "../../res/logo-full.svg";
 import { useState } from "react";
 import Router from "next/router";
+import { useRecoilState } from "recoil";
+import { AuthState, UserType } from "../../states/recoilAuthState";
 
 export default function LoginLayout() {
   const logoStyle = { width: "240px", height: "auto" };
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const router = Router;
+  const [auth, setAuth] = useRecoilState(AuthState)
+
+  const login = () => {
+    if(email === "mentor"){
+      localStorage.setItem("auth", "mentor")
+      setAuth(UserType.Mentor)
+      router.push("/");
+    }else{
+      localStorage.setItem("auth", "user")
+      setAuth(UserType.Beginner)
+      router.push("/");
+    }
+  }
 
   return (
     <div className="container">
@@ -32,7 +47,7 @@ export default function LoginLayout() {
         />
       </div>
       <div className="btn-box">
-        <button className="submit-btn">로그인</button>
+        <button className="submit-btn" onClick={() => login()}>로그인</button>
         <span className="register">
           <span>계정이 없으세요?</span>
           <span

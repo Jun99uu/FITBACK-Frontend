@@ -4,16 +4,47 @@ import sign from "../../res/icons/sign.svg";
 import { useRecoilState } from "recoil";
 import { CurrentMenu, MenuState } from "../../states/recoilMenuState";
 import Link from "next/link";
+import { AuthState, UserType } from "../../states/recoilAuthState";
+import { useEffect } from "react";
 import router from "next/router";
 
 export default function Header() {
   const [menuState, setMenuState] = useRecoilState(MenuState);
+  const [authState, setAuthState] = useRecoilState(AuthState);
 
   const changePage = (menu: CurrentMenu) => {
     //페이지 이동
 
     setMenuState(menu);
   };
+
+  const authManage = () => {
+    const auth = localStorage.getItem("auth");
+    if (auth) {
+      auth === "mentor"
+        ? setAuthState(UserType.Mentor)
+        : auth === "user"
+        ? setAuthState(UserType.Beginner)
+        : null;
+      return;
+    }
+    if (authState !== UserType.None) {
+      authState === UserType.Beginner
+        ? localStorage.setItem("auth", "user")
+        : authState === UserType.Mentor
+        ? localStorage.setItem("auth", "mentor")
+        : null;
+    }
+  };
+
+  const logout = () => {
+    setAuthState(UserType.None);
+    localStorage.removeItem("auth");
+  };
+
+  useEffect(() => {
+    authManage();
+  }, [authState]);
 
   return (
     <div className="container">
@@ -54,20 +85,40 @@ export default function Header() {
               />
             </div>
           </li>
-          <li className={menuState === CurrentMenu.Register ? "selected" : ""}>
-            <Link
-              href="/signup"
-              onClick={() => changePage(CurrentMenu.Register)}
-            >
-              회원가입
-            </Link>
-          </li>
-          <li className="divide-line">|</li>
-          <li className={menuState === CurrentMenu.Login ? "selected" : ""}>
-            <Link href="/login" onClick={() => changePage(CurrentMenu.Login)}>
-              로그인
-            </Link>
-          </li>
+          {authState === UserType.None ? (
+            <>
+              <li
+                className={menuState === CurrentMenu.Register ? "selected" : ""}
+              >
+                <Link
+                  href="/signup"
+                  onClick={() => changePage(CurrentMenu.Register)}
+                >
+                  회원가입
+                </Link>
+              </li>
+              <li className="divide-line">|</li>
+              <li className={menuState === CurrentMenu.Login ? "selected" : ""}>
+                <Link
+                  href="/login"
+                  onClick={() => changePage(CurrentMenu.Login)}
+                >
+                  로그인
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                {authState === UserType.Beginner
+                  ? "초심자님, 환영합니다!"
+                  : "멘토님, 환영합니다!"}
+              </li>
+              <li onClick={() => logout()} className="logout-btn">
+                로그아웃
+              </li>
+            </>
+          )}
         </ul>
       </div>
       <style jsx>{`
@@ -131,6 +182,9 @@ export default function Header() {
         }
         .selected {
           border-bottom: 4px solid #30b5ff;
+        }
+        .logout-btn {
+          cursor: pointer;
         }
       `}</style>
     </div>

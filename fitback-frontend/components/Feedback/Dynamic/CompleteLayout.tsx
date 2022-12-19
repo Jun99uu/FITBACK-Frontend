@@ -87,6 +87,7 @@ export default function CompleteLayout(props: feedbackProps) {
               <li>만족도 {tmpMentor.satisfaction}%</li>
             </ul>
           </div>
+          <button className="evaluate-btn">만족도 평가하기</button>
         </ul>
         <span className="answer">{`질문하신 내용을 기반으로 피드백 드렸습니다. 영상확인 부탁드립니다.\n추가적으로 궁금한 내용은 댓글을 통해 남겨주시면 답변해드리도록 하겠습니다.`}</span>
       </div>
@@ -157,6 +158,9 @@ export default function CompleteLayout(props: feedbackProps) {
           height: 2px;
           background-color: #bcbcbc;
         }
+        .upper-bar{
+          width: 100%;
+        }
         ul {
           list-style-type: none;
           margin: 0px 0px 0px -10px;
@@ -165,6 +169,7 @@ export default function CompleteLayout(props: feedbackProps) {
           flex-direction: row;
           gap: 10px;
           align-items: center;
+          position:relative;
         }
         .img-box {
           width: 50px;
@@ -218,6 +223,7 @@ export default function CompleteLayout(props: feedbackProps) {
           white-space: pre-line;
         }
         .bottom-box {
+          width: 100%;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -251,6 +257,19 @@ export default function CompleteLayout(props: feedbackProps) {
           border-radius: 20px;
           cursor: pointer;
           align-self: center;
+        }
+        .evaluate-btn{
+          padding: 15px 40px;
+          border-radius: 500;
+          background-color: #30b5ff;
+          color: white;
+          font-weight: 800;
+          border: none;
+          border-radius: 20px;
+          cursor: pointer;
+          position: absolute;
+          top:0px;
+          right: 0px;
         }
       `}</style>
     </div>

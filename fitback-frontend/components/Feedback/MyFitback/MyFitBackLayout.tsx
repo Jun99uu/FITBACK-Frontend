@@ -1,16 +1,12 @@
 import { useState } from "react";
 import BeginnerLayout from "./BeginnerLayout";
 import MentorLayout from "./MentorLayout";
+import { UserType } from "../../../states/recoilAuthState";
 
 enum Stage {
   New = "피드백 요청",
   Proceeding = "피드백 진행 중",
   Complete = "피드백 완료",
-}
-
-enum UserType {
-  Beginner,
-  Mentor,
 }
 
 interface fitbackProps {
