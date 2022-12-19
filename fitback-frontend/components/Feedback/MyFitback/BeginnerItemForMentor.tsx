@@ -64,7 +64,7 @@ export default function BeginnerItemForMentor(props: itemProps) {
         ) : stage === Stage.Proceeding ? (
           <button className="complete-btn">피드백 완료</button>
         ) : stage === Stage.Complete ? (
-          <button className="complete-btn">만족도 평가</button>
+          <button className="complete-btn">댓글 작성</button>
         ) : (
           <></>
         )}
